@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WhatsApp-like Chat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="name-dialog" class="name-dialog">
+    <div class="name-container">
+      <h2>/ System Access /</h2>
+      <input type="text" id="username-input" placeholder="Enter username_" required>
+      <input type="password" id="password-input" placeholder="Enter password_" required>
+      <button onclick="joinChat()">Initialize Connection</button>
+    </div>
+  </div>
+  <div class="chat-container" style="display: none;">
+    <div class="chat-header">
+      <span id="join-time"></span>
+      <div id="joined-users" class="joined-users"></div>
+      <div id="online-users" class="online-users">Online users: 0</div>
+      <button id="clear-all" class="clear-all-btn">Clear All</button>
+    </div>
+    <div class="chat-messages" id="messages"></div>
+    <div id="typing-indicator" class="typing-indicator"></div>
+    <div id="clear-dialog" class="clear-dialog">
+      <div class="clear-dialog-content">
+        <h3>Clear All Messages</h3>
+        <input type="password" id="clear-password" placeholder="Enter password...">
+        <div class="dialog-buttons">
+          <button id="confirm-clear">Clear</button>
+          <button id="cancel-clear">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <form id="message-form">
+      <div class="input-container">
+        <input type="text" id="message-input" placeholder="Type a message...">
+      </div>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
